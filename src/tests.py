@@ -68,6 +68,11 @@ class FlaskAppTests(unittest.TestCase):
         r = self.app.get('/multiply?a=3&b=8')
         self.assertEqual(r.status_code, 200)
         self.assertEqual(r.data, b'24.0')
+        
+    def test_divide_success(self):
+        r = self.app.get('/divide?a=8&b=3')
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r.data, b'5.0')
 
 if __name__ == '__main__':
     unittest.main()
