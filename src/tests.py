@@ -63,6 +63,11 @@ class FlaskAppTests(unittest.TestCase):
         r = self.app.get('/add?a=2&b=3')
         self.assertEqual(r.status_code, 200)
         self.assertEqual(r.data, b'5.0')
+        
+    def test_multiply_success(self):
+        r = self.app.get('/multiply?a=3&b=8')
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r.data, b'24.0')
 ##
 ###
 if __name__ == '__main__':
